@@ -1,0 +1,10 @@
+.settings
+target
+.classpath
+.project
+*.class
+TanqueWeb
+RemoteSystemsTempFiles
+Servers
+.metadata
+.recommenders

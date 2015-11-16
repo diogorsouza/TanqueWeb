@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Tanque Web</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<p:commandButton update="table" actionListener="#{calculoTanqueMB.listaCalculosCliente()}"/>		
+		<p:dataTable id="table" value="#{calculoTanqueMB.listaCalculosCliente()}" reflow="true" var="calculo">
+			<p:column headerText="Código">
+				#{calculo.codigo}
+			</p:column>
+				<p:column headerText="volume">
+				#{calculo.volume}
+			</p:column>
+				<p:column headerText="data">
+				#{calculo.data}
+			</p:column>
+				<p:column headerText="cliente">
+				#{calculo.cliente}
+			</p:column>
+			<p:column width="80"  headerText="Estado">
+				<p:progressBar value="#{calculoTanqueMB.testeDefinicaoImgemNivel(calculo.volume,50)}" labelTemplate="#{calculoTanqueMB.testeDefinicaoImgemNivel(calculo.volume,50)}%" styleClass="animated" displayOnly="true" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>
