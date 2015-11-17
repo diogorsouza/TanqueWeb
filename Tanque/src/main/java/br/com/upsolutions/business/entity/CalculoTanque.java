@@ -16,7 +16,7 @@ import javax.persistence.TemporalType;
 @Entity
 @Table
 @NamedQuery(name="CalculoTanque.listCalculos", 
-			query= "select c from CalculoTanque as c WHERE c.cliente like :cliente ")
+			query= "select c from CalculoTanque as c WHERE c.cliente like :cliente order by c.codigo desc")
 public class CalculoTanque implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

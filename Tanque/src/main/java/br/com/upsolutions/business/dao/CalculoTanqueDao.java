@@ -16,6 +16,7 @@ public class CalculoTanqueDao extends GenericDao<CalculoTanque> {
 			Query query = null;
 			query = createNamedQuery("CalculoTanque.listCalculos");
 			query.setParameter("cliente", "TRATASUL");
+			query.setMaxResults(20);
 			List<CalculoTanque> calculos = query.getResultList();
 			for (CalculoTanque c : calculos)
 				System.out.println("Código: " + c.getCodigo());
