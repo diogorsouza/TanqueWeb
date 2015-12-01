@@ -10,23 +10,32 @@
 
 <h:body>
 	<h:form>
-		<p:commandButton update="table" actionListener="#{calculoTanqueMB.listaCalculosCliente()}"/>		
-		<p:dataTable id="table" value="#{calculoTanqueMB.listaCalculosCliente()}" reflow="true" var="calculo">
+		<p:commandButton update="table"
+			actionListener="#{calculoTanqueMB.listaCalculosCliente()}" />
+		<p:dataTable id="table"
+			value="#{calculoTanqueMB.listaCalculosCliente()}" reflow="true"
+			var="calculo">
 			<p:column headerText="Código">
 				#{calculo.codigo}
 			</p:column>
-				<p:column headerText="volume">
+			<p:column headerText="volume">
 				#{calculo.volume}
 			</p:column>
-				<p:column headerText="data">
+			<p:column headerText="data">
 				#{calculo.data}
 			</p:column>
-				<p:column headerText="cliente">
+			<p:column headerText="cliente">
 				#{calculo.cliente}
 			</p:column>
-			<p:column width="80"  headerText="Estado">
-				<p:progressBar value="#{calculoTanqueMB.testeDefinicaoImgemNivel(calculo.volume,500)}" labelTemplate="#{calculoTanqueMB.testeDefinicaoImgemNivel(calculo.volume,50)}%" styleClass="animated" displayOnly="true" />
+			<p:column headerText="Estado">
+				<p:progressBar ajax="true"
+					value="#{calculoTanqueMB.testeDefinicaoImgemNivel(calculo.volume,7200)}"
+					labelTemplate="#{calculoTanqueMB.testeDefinicaoImgemNivel(calculo.volume,7200)}%"
+					styleClass="animated" displayOnly="true">
+					
+				</p:progressBar>
 			</p:column>
+
 		</p:dataTable>
 	</h:form>
 </h:body>

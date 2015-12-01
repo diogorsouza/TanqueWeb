@@ -1,5 +1,7 @@
 package br.com.upsolutions.controller.mb;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -30,7 +32,13 @@ public class CalculoTanqueMB {
 
 	public double testeDefinicaoImgemNivel(double nivel, double tanqueCheio) {
 		double percentual = (nivel / tanqueCheio) * 100;
-		return percentual;
+		return arrendondamento(percentual);
+	}
+	public double arrendondamento(double number){
+		BigDecimal progress=new BigDecimal(number).setScale(1, RoundingMode.HALF_EVEN);
+		System.out.println(progress.doubleValue());
+		return progress.doubleValue();
+
 	}
 
 }

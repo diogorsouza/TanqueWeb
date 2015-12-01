@@ -30,7 +30,7 @@ public class LerDadosWeb {
 					};
 				}
 			};
-			URL url = new URI("file:///D://Luiz%20H//TanqueWeb2//TanqueWeb//src//main//webapp//calculo.html").toURL();
+			URL url = new URI("http://192.168.1.164").toURL();
 			URLConnection conn = url.openConnection();
 			Reader rd = new InputStreamReader(conn.getInputStream());
 			EditorKit kit = new HTMLEditorKit();
@@ -45,9 +45,7 @@ public class LerDadosWeb {
 		for (int i = 38; i < (buf.length()); i++) {
 			a += buf.charAt(i);
 		}
-		System.out.println(a);
 		double b = Double.parseDouble(a);
-		;
 		return b;
 	}
 
